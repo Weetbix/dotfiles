@@ -28,4 +28,9 @@ set hlsearch
 set incsearch
 set ignorecase
 
+" store all temp files in tmp folder instead of adjacently
+set backupdir=/tmp//
+set directory=/tmp//
+set undodir=/tmp//
+
 let g:vimwiki_list = [{'path': '~/Google Drive/vimwiki/', 'path_html': '~/htmlwiki', 'syntax': 'markdown', 'ext' : '.md'}]
