@@ -5,6 +5,9 @@ alias reload_profile="source ~/.zshrc"
 alias branch="git branch --show-current"
 alias ci="code"
 
+# vimwiki
+alias notes="vim -c \"VimwikiIndex\" -c \"VimwikiGoto Scratchpad\""
+
 ZSH_DISABLE_COMPFIX=true
 
 # Path to your oh-my-zsh installation.
