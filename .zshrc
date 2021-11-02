@@ -15,6 +15,9 @@ export ZSH="$HOME/.oh-my-zsh"
 
 ZSH_THEME="robbyrussell"
 
+# Automatically answer YES to the zsh update prompt (auto update)
+DISABLE_UPDATE_PROMPT=true
+
 plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
