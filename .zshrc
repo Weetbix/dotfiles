@@ -4,6 +4,7 @@ alias checkout="gci"
 alias reload_profile="source ~/.zshrc"
 alias branch="git branch --show-current"
 alias ci="code"
+alias kill-port="npx kill-port"
 
 # vimwiki
 alias notes="vim -c \"VimwikiIndex\" -c \"VimwikiGoto Scratchpad\""
