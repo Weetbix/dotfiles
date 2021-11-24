@@ -1,6 +1,6 @@
 alias chrome_corsless="open -na Google\ Chrome --args --user-data-dir=/tmp/temporary-chrome-profile-dir --disable-web-security --disable-site-isolation-trials"
 alias branches="git for-each-ref --sort=committerdate refs/heads/ --format='%(committerdate:short) %(refname:short)'"
-alias checkout="gci"
+alias checkout="npx git-checkout-interactive"
 alias reload_profile="source ~/.zshrc"
 alias branch="git branch --show-current"
 alias ci="code"
