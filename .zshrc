@@ -5,13 +5,27 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-alias chrome_corsless="open -na Google\ Chrome --args --user-data-dir=/tmp/temporary-chrome-profile-dir --disable-web-security --disable-site-isolation-trials"
+# Expects:
+# $1 npm package name
+# $2 npm bin name, this is not always the same as the package
+# $3+ args to pass
+function install_and_run() {
+    npm list --depth 1 --global $1 > /dev/null 2>&1
+    if [ "$?" != "0" ]
+    then
+        npm install -g $1
+    fi
+    # Run the command with all the args
+    ${@:2}
+}
+
+alias chrome-corsless="open -na Google\ Chrome --args --user-data-dir=/tmp/temporary-chrome-profile-dir --disable-web-security --disable-site-isolation-trials"
 alias branches="git for-each-ref --sort=committerdate refs/heads/ --format='%(committerdate:short) %(refname:short)'"
-alias checkout="npx git-checkout-interactive@1.0.1"
-alias reload_profile="source ~/.zshrc"
+alias checkout="install_and_run git-checkout-interactive gci"
+alias reload-profile="source ~/.zshrc"
 alias branch="git branch --show-current"
 alias ci="code"
-alias kill-port="npx kill-port@1.6.1"
+alias kill-port="install_and_run kill-port kill-port"
 
 # vimwiki
 alias notes="vim -c \"VimwikiIndex\" -c \"VimwikiGoto Scratchpad\""
