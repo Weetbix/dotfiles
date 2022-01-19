@@ -7,11 +7,11 @@ fi
 
 alias chrome_corsless="open -na Google\ Chrome --args --user-data-dir=/tmp/temporary-chrome-profile-dir --disable-web-security --disable-site-isolation-trials"
 alias branches="git for-each-ref --sort=committerdate refs/heads/ --format='%(committerdate:short) %(refname:short)'"
-alias checkout="npx git-checkout-interactive"
+alias checkout="npx git-checkout-interactive@1.0.1"
 alias reload_profile="source ~/.zshrc"
 alias branch="git branch --show-current"
 alias ci="code"
-alias kill-port="npx kill-port"
+alias kill-port="npx kill-port@1.6.1"
 
 # vimwiki
 alias notes="vim -c \"VimwikiIndex\" -c \"VimwikiGoto Scratchpad\""
