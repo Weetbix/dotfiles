@@ -22,6 +22,7 @@ function install_and_run() {
 alias chrome-corsless="open -na Google\ Chrome --args --user-data-dir=/tmp/temporary-chrome-profile-dir --disable-web-security --disable-site-isolation-trials"
 alias branches="git for-each-ref --sort=committerdate refs/heads/ --format='%(committerdate:short) %(refname:short)'"
 alias checkout="install_and_run git-checkout-interactive gci"
+alias git-delete-branch="install_and_run git-branch-delete git-branch-delete"
 alias reload-profile="source ~/.zshrc"
 alias branch="git branch --show-current"
 alias ci="code"
@@ -52,9 +53,9 @@ source $DOTFILES/zsh-plugins/powerlevel10k/powerlevel10k.zsh-theme
 
 source $ZSH/oh-my-zsh.sh
 
-export NVM_DIR="$HOME/.nvm"
+export NVM_DIR="$HOME/.nvm"bash_completion
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/"  # This loads nvm bash_completion
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
