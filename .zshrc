@@ -29,6 +29,7 @@ alias ci="code"
 alias kill-port="install_and_run kill-port kill-port"
 alias format-json="pbpaste | json_pp | pbcopy"
 alias update-fe-dependabot-prs="gh pr list --author \"dependabot[bot]\" --label \"Frontend\" --json number --jq '.[].number' | xargs -I {} gh pr update-branch {}"
+alias recreate-fe-dependabot-prs="gh pr list --author \"dependabot[bot]\" --label \"Frontend\" --json number --jq '.[].number' | xargs -I {} gh pr comment {} -b \"@dependabot recreate\""
 
 # vimwiki
 alias notes="vim -c \"VimwikiIndex\" -c \"VimwikiGoto Scratchpad\""
