@@ -28,6 +28,7 @@ alias branch="git branch --show-current"
 alias ci="code"
 alias kill-port="install_and_run kill-port kill-port"
 alias format-json="pbpaste | json_pp | pbcopy"
+alias update-fe-dependabot-prs="gh pr list --author \"dependabot[bot]\" --label \"Frontend\" --json number --jq '.[].number' | xargs -I {} gh pr update-branch {}"
 
 # vimwiki
 alias notes="vim -c \"VimwikiIndex\" -c \"VimwikiGoto Scratchpad\""
