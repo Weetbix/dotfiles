@@ -14,6 +14,10 @@ Before running the setup script, ensure you have the following installed:
    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
    ```
 
+3. **P4Merge** - Visual diff and merge tool
+   - Download and install from [P4Merge official website](https://www.perforce.com/products/helix-core-apps/merge-diff-tool-p4merge)
+   - Used for comparing files and resolving merge conflicts
+
 ## What's Included
 
 - `.zshrc` - Zsh shell configuration
