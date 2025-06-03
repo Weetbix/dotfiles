@@ -19,6 +19,11 @@ function install_and_run() {
     ${@:2}
 }
 
+# List all dependencies of a pnpm package recursively (for monorepos)
+function pnpm-deps() {
+  pnpm list -r "$1" | grep "$1" | sort | uniq
+}
+
 alias chrome-corsless="open -na Google\ Chrome --args --user-data-dir=/tmp/temporary-chrome-profile-dir --disable-web-security --disable-site-isolation-trials"
 alias branches="git for-each-ref --sort=committerdate refs/heads/ --format='%(committerdate:short) %(refname:short)'"
 alias checkout="install_and_run git-checkout-interactive gci"
@@ -30,7 +35,7 @@ alias kill-port="install_and_run kill-port kill-port"
 alias format-json="pbpaste | json_pp | pbcopy"
 alias update-fe-dependabot-prs="gh pr list --author \"dependabot[bot]\" --label \"Frontend\" --json number --jq '.[].number' | xargs -I {} gh pr update-branch {}"
 alias recreate-fe-dependabot-prs="gh pr list --author \"dependabot[bot]\" --label \"Frontend\" --json number --jq '.[].number' | xargs -I {} gh pr comment {} -b \"@dependabot recreate\""
-
+alias run-fe-dependabot-grouping="gh workflow run \"FE/All/Group passing dependabot PRs\" --ref main"
 # vimwiki
 alias notes="vim -c \"VimwikiIndex\" -c \"VimwikiGoto Scratchpad\""
 
@@ -62,3 +67,6 @@ export NVM_DIR="$HOME/.nvm"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# Add local user homebrew to path
+export PATH="$HOME/homebrew/bin:$PATH"
